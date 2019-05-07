@@ -11,11 +11,9 @@ const Single = React.createClass({
 
     const {postId} = this.props.params;
 
-    const i = this.props.posts.findIndex(
-      (posts) => posts.code === this.props.params.postId );
+    const i = this.props.posts.findIndex((posts) => posts.code === this.props.params.postId );
       const singlepost = this.props.posts[i];
-      console.log(singlepost);
-
+      //console.log(posts);
       const postComments = this.props.comments[postId] || [];
 
     return (
