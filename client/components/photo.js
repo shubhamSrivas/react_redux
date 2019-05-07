@@ -4,11 +4,15 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Photo = React.createClass({
   render(){
-    const {posts, i, comments} = this.props;
+
+    //console.log(this.props);
+    const { posts, i, comments } = this.props;
+    //console.log(posts);
+
     return(
-      <figure className = "grid-figure">
+      <figure className = "grid-figure" >
       <div className = "grid-photo-wrap">
-      <Link to={`/view/${posts.code}`}>
+          <Link to={`/view/${posts.code}`} {...this.props}>
         <img src = {posts.display_src} alt = {posts.caption}
          className = "grid-photo"/>
       </Link>
