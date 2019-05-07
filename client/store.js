@@ -18,4 +18,13 @@ const store = createStore(rootReducer, defaultState);
 
 export const history = syncHistoryWithStore( browserHistory , store);
 
+//this we are doing to solve the problem of hot reloading
+if(module.hot){
+  module.hot.accept('./reducers/index', ()=>{
+    const nextRoorReducer = require('./reducers/index').default;
+    store.replaceReducer(nextRoorReducer);
+  });
+
+}
+
 export default store;
